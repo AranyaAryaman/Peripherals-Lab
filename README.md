@@ -15,3 +15,7 @@ https://www.openshot.org/ (It detects your OS and redirects you accordingly)
 *2nd Shot* (Videos combined into 1)
 
 https://drive.google.com/file/d/1cM9vJcMkTtM36eWqRM2uVsJj6MaPPf2h/view?usp=sharing
+
+*3rd Shot* (Few Audio Chunks Added)
+
+https://drive.google.com/file/d/1i5UDC8QJhCEw2_Gn9qvjg385yQWsDDkP/view?usp=sharing
