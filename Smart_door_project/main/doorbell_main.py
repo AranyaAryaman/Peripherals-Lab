@@ -93,7 +93,5 @@ while True:
         print(GPIO.input(BUTTON_PIN))
         sleep(5)
     else:
-        #os.system('clear') # clear the screens text
-        #print ("Waiting for you to press a button")
         sleep(0.1)
  

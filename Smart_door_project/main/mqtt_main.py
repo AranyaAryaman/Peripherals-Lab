@@ -5,7 +5,7 @@ import settings
 from goto import with_goto
 
 MQTT_SERVER = "broker.hivemq.com"
-MQTT_PATH = "door_open"
+MQTT_PATH = "main_door"
 
 LED_PIN = 10
 SERVO_PIN = 12
@@ -22,9 +22,8 @@ def run(msg):
             f.write("deactivate")
             f.close()
             # Move the servo back and forth
-            # Set up pin 11 for PWM
-            GPIO.setup(SERVO_PIN,GPIO.OUT)  # Sets up pin 11 to an output (instead of an input)
-            p = GPIO.PWM(SERVO_PIN, 50)     # Sets up pin 11 as a PWM pin
+            GPIO.setup(SERVO_PIN,GPIO.OUT)  # Sets up pin SERVO_PIN to an output (instead of an input)
+            p = GPIO.PWM(SERVO_PIN, 50)     # Sets up pin SERVO_PIN as a PWM pin
 
             p.start(0)
 
@@ -41,10 +40,6 @@ def run(msg):
                     i+=1
 
             while i<=12:
-                #if (tex=="open"):
-                #    p.ChangeDutyCycle(7)
-                #    i=8
-                #    sleep(10)
                 p.ChangeDutyCycle(i)    # Changes the pulse width to 12 (so moves the servo)
                 i+=1
                 sleep(1)

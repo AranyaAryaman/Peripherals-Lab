@@ -70,7 +70,6 @@ def MOTION(PIR_PIN):
             morsecode()
             f = open("demo.txt", "r")
             tex = f.read()
-            #print(tex)
             f.close()
             if tex=="deactivate":
                 settings.pir_on=False
@@ -110,6 +109,4 @@ while True:
         os.system('date') # print the systems date and time
         sleep(1)
     else:
-        #os.system('clear') # clear the screens text
-        #print ("Waiting for you to press a button")
         sleep(0.1)

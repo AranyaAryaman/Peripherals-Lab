@@ -14,9 +14,8 @@ GPIO.setup(LED_PIN,GPIO.OUT)
 def run():
 	print("Access Granted")
 	# Move the servo back and forth
-	# Set up pin 11 for PWM
-	GPIO.setup(SERVO_PIN,GPIO.OUT)  # Sets up pin 11 to an output (instead $
-	p = GPIO.PWM(SERVO_PIN, 50)     # Sets up pin 11 as a PWM pin
+	GPIO.setup(SERVO_PIN,GPIO.OUT)  # Sets up pin SERVO_PIN to an output (instead $
+	p = GPIO.PWM(SERVO_PIN, 50)     # Sets up pin SERVO_PIN as a PWM pin
 
 	p.start(0)
 	p.ChangeDutyCycle(7)     # Changes the pulse width to 7 (so moves the s$
@@ -30,10 +29,6 @@ def run():
 		GPIO.output(LED_PIN,GPIO.LOW)
 		i+=1
 	while i<=12:
-		#if (settings.pir_detect==True):
-		#       p.ChangeDutyCycle(7)
-		#       i=8
-		#       sleep(1)
 		p.ChangeDutyCycle(i)    # Changes the pulse width to 12 (so mov$
 		i+=1
 		sleep(1)

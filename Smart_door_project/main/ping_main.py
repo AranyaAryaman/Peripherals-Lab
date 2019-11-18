@@ -14,10 +14,9 @@ GPIO.setup(LED_PIN,GPIO.OUT)
 
 def run():
 	print("Opening...")
-	# Move the servo back and forth
-	# Set up pin 11 for PWM
-	GPIO.setup(SERVO_PIN,GPIO.OUT)  # Sets up pin 11 to an output (instead of an input)
-	p = GPIO.PWM(SERVO_PIN, 50)     # Sets up pin 11 as a PWM pin
+        # Move the servo back and forth
+	GPIO.setup(SERVO_PIN,GPIO.OUT)  # Sets up pin SERVO_PIN to an output (instead of an input)
+	p = GPIO.PWM(SERVO_PIN, 50)     # Sets up pin SERVO_PIN as a PWM pin
 
 	p.start(0)
 	p.ChangeDutyCycle(7)     # Changes the pulse width to 7 (so moves the servo)
@@ -31,10 +30,6 @@ def run():
 		GPIO.output(LED_PIN,GPIO.LOW)
 		i+=1
 	while i<=12:
-		#if (tex=="open"):
-		#	p.ChangeDutyCycle(7)
-		#	i=8
-		#	sleep(10)
 		p.ChangeDutyCycle(i)    # Changes the pulse width to 12 (so mov$
 		i+=1
 		sleep(1)
@@ -64,7 +59,7 @@ while(True):
 	distance = pulse_duration*17150
 	distance = round(distance, 2)
 	print("Distance: "+str(distance)+"cm")
-	if(distance<=7):
+	if(distance<=7):#open door if distance less than 7cm 
 		run()
 GPIO.cleanup()
 
